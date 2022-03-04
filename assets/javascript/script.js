@@ -23,5 +23,13 @@ function sucessoGeolocalizao(resposta){
 
 
 function renderizaGeolocalizacao(local){
-    
+
 }
+
+function buscaPorNomeOuCep(){
+    entrada = "Massaranduba"
+    let promisse = axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(entrada)}&appid=f25110b0f83adb9f7c080ee182cd1d00`)
+    promisse.then(resposta => console.log(resposta.data))
+}
+
+buscaPorNomeOuCep()
