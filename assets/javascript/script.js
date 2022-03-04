@@ -10,7 +10,7 @@ navigator.geolocation.getCurrentPosition((position) => {
 // }
 
 function buscaPorGeolocalizao(latitude, longitude){
-    let promisse = axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=f25110b0f83adb9f7c080ee182cd1d00`)
+    let promisse = axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=f25110b0f83adb9f7c080ee182cd1d00&units=metric&lang=pt_br`)
     promisse.then(sucessoGeolocalizao)
     promisse.catch(erro => console.log(erro))
 }
@@ -28,7 +28,8 @@ function renderizaGeolocalizacao(local){
 
 function buscaPorNomeOuCep(){
     entrada = "Massaranduba"
-    let promisse = axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(entrada)}&appid=f25110b0f83adb9f7c080ee182cd1d00`)
+    //entradaCEP = "17021" ${encodeURI(entrada)},
+    let promisse = axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(entrada)}&appid=f25110b0f83adb9f7c080ee182cd1d00&units=metric&lang=pt_br`)
     promisse.then(resposta => console.log(resposta.data))
 }
 
