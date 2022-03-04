@@ -15,12 +15,15 @@
 <body>
 
     <main>
-        <section>
-            <form action="">
+        <section class="pesquisa">
+            <form onsubmit="buscaPorNomeOuCep(event)">
                 <h1>Clima</h1>
                 <input type="search" placeholder="Cidade, ...">
-                <button>Buscar</button>
+                <button type="submit">Buscar</button>
             </form>
+        </section>
+
+        <section class="resultado">
         </section>
     </main>
 
